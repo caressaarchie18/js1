@@ -1,9 +1,11 @@
-(function(){"use strict";
-var myName = "Caressa";
+<<<<<< takehome-day2
+let userAnswerFN = prompt("What is your first name?");
+let userAnswerLN = prompt("What is your last name?");
 
-console.log(myName);
+console.log(userAnswerFN);
 
-var message = "Hi Ryeker! I want to be able to use JavaScript in creating more dynamic websites or customzing website templates more efficiently...One of my favorite hobbies is to play tennis.";
+alert(userAnswerLN);
 
-console.log(message);
-})();
+let userBirthday = new Date('4.7.94');
+confirm(userBirthday);
+alert(userBirthday);
