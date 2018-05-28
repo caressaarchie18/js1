@@ -1,3 +1,4 @@
+<<<<<< takehome-day2
 let userAnswerFN = prompt("What is your first name?");
 let userAnswerLN = prompt("What is your last name?");
 
