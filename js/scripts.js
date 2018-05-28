@@ -1,12 +1,10 @@
-var myName = "Caressa Archie";
-let birthday = new Date("4.07.1994");
-const goal = "To understand JavaScript in order to be more marketable as a developer!";
-console.log(myName, birthday, goal);
+let userAnswerFN = prompt("What is your first name?");
+let userAnswerLN = prompt("What is your last name?");
 
-let favMovie = "The Matrix";
-let favFood = "Seafood Pasta";
-const year = new Date(3/31/1999);
-const ingredients = ["red sauce", "rigatoni pasta", "shrimp"]
+console.log(userAnswerFN);
 
-alert(favFood +" "+ ingredients);
-confirm(favMovie + " "+ year)
+alert(userAnswerLN);
+
+let userBirthday = new Date('4.7.94');
+confirm(userBirthday);
+alert(userBirthday);
