@@ -1,88 +1,37 @@
-// let name = "Caressa"; //truthy or true
-// let age = 24; //falsy or false
-//
-// if(!name && age) {
-//   alert("one exists");
-// }
+let name = prompt("Please enter your name.", "John Doe");
+let favColor = prompt("What is your favorite color: red, orange, yellow, green, blue, pink, purple, black, white, or grey?", "blue");
 
-// const numAge = 32; //Number
-// const stringAge = "32"; //String
-//
-// if(numAge != stringAge) {
-//   alert("they're the same!")
-// };
-//
-// let objectOne = {
-//   name: "Caressa"
-// };
-// let objectTwo = {
-//   name: "Caressa"
-// };
-//
-// // alert(objectOne == objectTwo); //ALWAYS FALSE
-//
-// if(numAge > stringAge.length) {
-//   alert("whaaaaaat?")
-// }
-
-//TRY IT OUT:
-var myString = "applesauce"
-var objString = new String("applesauce")
-
-if(myString == objString) {
-  alert("hmmm interesting")
-} //they are both "loosely equal" and "strictly not equal"
-//TRY IT OUT DONE
-
-let limit = 12;
-// console.log(limit);
-limit += 7; //add specific value
-//limit++; //short way
-//limit = limit + 1; //long way
-
-// let myNumber = "Ted";
-// isNaN(myNumber)
-// //console.log(isNaN(myNumber)); how to check if number when not a Number
-// //console.log(!isNaN(myNumber)); how to check that it is not a number when it is a number
-// //myNumber = parseInt()
-// console.log(myNumber++);
-
-//TRY IT OUT 2:
-let numOne = parseInt(prompt ("Please add a number value.", "10"));
-let numTwo = prompt ("Please add a second value.", "10");
-numTwo = parseInt(numTwo);
-alert(numOne + numTwo);
-//TRY IT OUT DONE
-
-if(numOne > numTwo) {
-  alert("Your first number is bigger than your second number!");
-} else if(numOne === numTwo) {
-  alert("They're the same!");
-} else if(numOne < numTwo) {
-  alert("Number one is smaller than number two!");
-} else {
-  alert("Something went wrong");
-}
-
-/*if(numOne < numTwo) {
-  alert("yay");
-}else {
-  alert("boooo");
-}*/
-
-let firstName = prompt("What is your first name?", "Tom");
-
-switch (firstName.toLowerCase()) {
-  case "tom":
-    alert("Hello Tom!");
-    break;
-  case "john":
-  case "michael":
-  case "jordan":
-    alert("Your name is very common.");
-    break;
+switch (favColor.toLowerCase()) {
+  case "blue":
+  alert("Hello " + name + "! That's my favorite color too!");
+  break;
+  case "red":
+  alert("Hello " + name + "! Strawberry jello is red!");
+  break;
+  case "orange":
+  alert("Hello " + name + "! Orange reminds me of a basketball!");
+  break;
+  case "yellow":
+  alert("Hello " + name + "! Yellow is one of the colors for the Golden State Warriors!");
+  break;
+  case "green":
+  alert("Hello " + name + "! Green is the color of fresh grass!");
+  break;
+  case "pink":
+  alert("Hello " + name + "! The pink Starburst is my favorite!");
+  break;
+  case "purple":
+  alert("Hello " + name + "! Plums are purple!");
+  break;
+  case "black":
+  alert("Hello " + name + "! Black is the absence of color!");
+  break;
+  case "white":
+  alert("Hello " + name + "! White fully reflects and scatters all the visible wavelengths of light!");
+  case "grey":
+  alert("Hello " + name + "! Grey looks good with any color!");
+  break;
   default:
-    alert("I have never heard of that name before...");
-    break;
-
+  alert("That's not one of the colors I mentioned...");
+  break;
 }
