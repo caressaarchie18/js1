@@ -1,7 +1,7 @@
 let name = prompt("Please enter your name.", "John Doe");
 let favColor = prompt("What is your favorite color: red, orange, yellow, green, blue, pink, purple, black, white, or grey?", "blue");
 
-switch (favColor.toLowerCase()) {
+switch (favColor.LowerCase()) {
   case "blue":
   alert("Hello " + name + "! That's my favorite color too!");
   break;
