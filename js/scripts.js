@@ -1,92 +1,44 @@
-//CONTINUING FROM DAY4 CLASSWORK
-/*let products = [["blanket", [12.99], "The best blanket around."], ["rattle", 4.99, "It rattles man..."], ["diapers", 12.99, "They catch the doo doo."]];
-
-let i = 0; // control statement ; practice on while loops
-
-while (i < products.length) { //parameters
-  //console.log(products [i]);
-  i++; //Incrementor
-}
-//console.log(i); //end of while loops practice
-
-for (let i = 0; i < products.length; i++) { //practice
-  console.log(products [i]);
-}
-
-
- //while loop
-let i = 0
-let newProduct = ["squeaky toy", 19.99, "Really good toy."];
-do {
-  //Add newProduct to second member of products array
-  if (i === 1) products[i].push(newProduct);
-  i++;
-} while (i < products.length);
-console.log(products);
-
-//for each loops: function attached to every array (built-in looping mechanism for arrays) ; favorite form of loop code
-products.forEach((products) => {  //method: . before it and () after it
-  console.log(products);
-})
-
-//TRY IT OUT #1 : start array from the end
-for (let i = products.length - 1; i >= 0; i--) {
-  console.log(products [i]);
-}  END OF DAY4 CLASSWORK*/
-
-
-
-///FUNCTIONS : set it aside and call on it as many times as I want without violating previous code
-
-function capitialCase(string) {  // FUNCTION DEFINITION: there is no value in the argument (string) until you call the function
-  // return string.toUpperCase();
-  let words = string.split(" ");
-  words.forEach(word => {
-    let letters = word.split("");
-    let capped = letters[0].toUpperCase()
-    letters.splice(0, 1, capped);
-  });
-  return words.join(" ");
-};
-
-let newString = capitialCase("peter piper") //function CALL
-
-console.log(newString);
-
-// myCoolFunciton("cheese")
-
-let myCoolFunciton = (stuff) => { // SIMPLEST fat arrow function
-  console.log(stuff);
-}
-// let myCoolFunciton = stuff => { // 1 argument fat arrow function
-  // console.log(stuff);
+// //#1 & #2
+// let answer = powerOfTwo(parseInt(prompt("What do you want to square?", '2')));
+//
+// function powerOfTwo(number) {
+//   if(!isNan(number)) {
+//     return number * number;
+//   } else {
+//     alert("NaN");
+//     answer = powerOfTwo(parseInt(prompt("That wasn't a number! What number?", '2')));
+//     // alert(answer);
+//   }
+// };
+//
+// // alert(answer);
+//
+// //#3
+// function parseString(string) {
+//   let parsedLetter = string.charAt(0).toUpperCase();
+//   let stringArr = string.split('');
+//   stringArr.splice(0, 1, parsedLetter);
+//   string = stringArr.join(''); //Replaces first letter with new uppercase
+//   if(string.charAt(string.length - 1) !== '.') string = string + '.';
+//   return string;
 // }
+// // let answer = parseString(prompt("Type something in.", "I love stringed cheese"));
+// // alert(answer);
 
-function divide(arg1, arg2) {
-  return arg2/arg1;
+
+//#4
+function reverseHalves(string) {
+  let halfIndex = string.length / 2;
+  let firstHalf = string.substring(0, halfIndex);
+  let secondHalf = string.substring(halfIndex, string.length);
+  alert(`${secondHalf}${firstHalf}`);
 }
 
-//TRY IT OUT #2
-function ageDog(years) {
-  return years * 7;
-};
+reverseHalves(prompt("give me a sentence ", " hello world!"));
 
-alert(ageDog(parseInt(prompt("How old is your dog in years?", "3"))));
-
-//TRY IT OUT #2.1
-function lifetimeCalculator(age, dailyUse) {
-  if(!isNaN(age) && !isNaN(dailyUse)) {
-    const death = 80;
-    return (death - age) * (dailyUse * 365);
-  } else {
-    userAge = prompt('how old are you?', '30');
-    userUse = prompt("How much do you use every day?"); 
-  }
-};
-
-let userAge = prompt('how old are you?', '30');
-let userUse = prompt("How much do you use every day?", '1');
-
-let usage = lifetimeCalculator(parseInt(userAge), parseInt(userUse));
-
-alert(`You will need ${usage} to last until you're 80.`);
+// #5
+function isPalindrome(string) {
+  let reversed = string.split('').reverse().join('') //"split" turns the string into an array with everything split into individual members, "reverse" only works on arrays, "join" only works on arrays retutning to a string
+  if(string === reversed) return true;
+  return false
+}
