@@ -1,92 +1,32 @@
-//CONTINUING FROM DAY4 CLASSWORK
-/*let products = [["blanket", [12.99], "The best blanket around."], ["rattle", 4.99, "It rattles man..."], ["diapers", 12.99, "They catch the doo doo."]];
+let todos =[]; //step 1
 
-let i = 0; // control statement ; practice on while loops
+let todo1 = [prompt("What is the first thing you want to do this weekend?", "Eat")];
+let todo2 = [prompt("What is the second thing you want to do this weekend?", "Go to the park.")];
+let todo3 = [prompt("What is the third thing you want to do this weekend?", "Have dinner with family.")];
 
-while (i < products.length) { //parameters
-  //console.log(products [i]);
-  i++; //Incrementor
+
+todos.push(todo1, todo2, todo3);
+
+for (let i = 0; i < todos.length; i++) { //step 2
+  let timeline = prompt(`How many days will it take to get ${todos[i][0]} done?`, "2");
+
+  timeline = !isNaN(parseInt(timeline)) ? //EDGE CASING
+  parseInt(timeline) : 2;
+
+  todos[i].unshift(timeline);
 }
-//console.log(i); //end of while loops practice
+console.log(todos, "after adding time it will take");
 
-for (let i = 0; i < products.length; i++) { //practice
-  console.log(products [i]);
+todos.sort();
+console.log(todos, "after sort");
+
+let longest = todos [0]; //step 3
+let j = 0;
+while(j < todos.length) {
+  if(todos[j][0] > longest[0]) longest = todos[j];
+  //valid inline if statement
+  // longest = todos[j][0] > longest[0] ? longest = todos [j] : longest = longest; //TERNARY VERSION
+  // console.log(todos[j][1]);
+  j++
 }
-
-
- //while loop
-let i = 0
-let newProduct = ["squeaky toy", 19.99, "Really good toy."];
-do {
-  //Add newProduct to second member of products array
-  if (i === 1) products[i].push(newProduct);
-  i++;
-} while (i < products.length);
-console.log(products);
-
-//for each loops: function attached to every array (built-in looping mechanism for arrays) ; favorite form of loop code
-products.forEach((products) => {  //method: . before it and () after it
-  console.log(products);
-})
-
-//TRY IT OUT #1 : start array from the end
-for (let i = products.length - 1; i >= 0; i--) {
-  console.log(products [i]);
-}  END OF DAY4 CLASSWORK*/
-
-
-
-///FUNCTIONS : set it aside and call on it as many times as I want without violating previous code
-
-function capitialCase(string) {  // FUNCTION DEFINITION: there is no value in the argument (string) until you call the function
-  // return string.toUpperCase();
-  let words = string.split(" ");
-  words.forEach(word => {
-    let letters = word.split("");
-    let capped = letters[0].toUpperCase()
-    letters.splice(0, 1, capped);
-  });
-  return words.join(" ");
-};
-
-let newString = capitialCase("peter piper") //function CALL
-
-console.log(newString);
-
-// myCoolFunciton("cheese")
-
-let myCoolFunciton = (stuff) => { // SIMPLEST fat arrow function
-  console.log(stuff);
-}
-// let myCoolFunciton = stuff => { // 1 argument fat arrow function
-  // console.log(stuff);
-// }
-
-function divide(arg1, arg2) {
-  return arg2/arg1;
-}
-
-//TRY IT OUT #2
-function ageDog(years) {
-  return years * 7;
-};
-
-alert(ageDog(parseInt(prompt("How old is your dog in years?", "3"))));
-
-//TRY IT OUT #2.1
-function lifetimeCalculator(age, dailyUse) {
-  if(!isNaN(age) && !isNaN(dailyUse)) {
-    const death = 80;
-    return (death - age) * (dailyUse * 365);
-  } else {
-    userAge = prompt('how old are you?', '30');
-    userUse = prompt("How much do you use every day?"); 
-  }
-};
-
-let userAge = prompt('how old are you?', '30');
-let userUse = prompt("How much do you use every day?", '1');
-
-let usage = lifetimeCalculator(parseInt(userAge), parseInt(userUse));
-
-alert(`You will need ${usage} to last until you're 80.`);
+console.log(longest);
